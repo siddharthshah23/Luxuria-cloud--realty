@@ -1,61 +1,105 @@
 import React from "react";
-import { makeStyles, TextField } from "@material-ui/core";
+import { makeStyles, Button } from "@material-ui/core";
 import data from "../../data/data.json";
+import { Link as RouterLink } from "react-router-dom";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
 
 const useStyles = makeStyles((theme) => ({
-  abc: {
+  menuButton: {
+    textColor: "white",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
+  footerRoot: {
     backgroundColor: "#101010",
   },
-  cssFocused: {},
 
-  cssOutlinedInput: {
-    "&$cssFocused $notchedOutline": {
-      borderColor: "#FFD700",
+  root: {
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "10px",
     },
-    "&:hover:not($disabled):not($focused):not($error) $notchedOutline": {
-      border: "2px solid",
-      borderColor: "yellow",
-    },
-  },
-
-  notchedOutline: {
-    borderWidth: "1px",
-    borderColor: "#696969",
   },
 }));
 const Footer = () => {
   const classes = useStyles();
-  return (
-    <div className={classes.abc}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-3">
-            <TextField
-              id="firstname"
-              label="FirstName"
-              variant="outlined"
-              fullWidth="true"
-              InputProps={{
-                classes: {
-                  root: classes.cssOutlinedInput,
-                  focused: classes.cssFocused,
-                  notchedOutline: classes.notchedOutline,
-                },
-              }}
-            />
-          </div>
-          <div className="col-lg-6">
-            <h1>hi</h1>
-            <h1>bye</h1>
-          </div>
-          <div className="col-lg-3">
-            <h1>hi</h1>
-            <h1>bye</h1>
+
+  const displayFooter = () => {
+    return (
+      <div className={classes.footerRoot}>
+        <div className={classes.root}>
+          <div class="container-fluid">
+            <div class="row pt-5">
+              <div class="col-md-3">
+                <div class="row">
+                  {data.linkData.map((item, i) => (
+                    <div class="col-12 d-flex flex-column align-items-center">
+                      <Button
+                        {...{
+                          key: i,
+                          color: "inherit",
+                          to: item.href,
+                          component: RouterLink,
+                          className: classes.menuButton,
+                        }}
+                      >
+                        <h5 style={{ color: "#696969", textAlign: "center" }}>
+                          {item.label}
+                        </h5>
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-12 d-flex flex-column align-items-center">
+                    <h1 style={{ textAlign: "center" }}>CONNECT WITH US</h1>
+                    <div class="row">
+                      <div class="col-6">
+                        <InstagramIcon
+                          fontSize="large"
+                          style={{ color: "#FFD700" }}
+                        />
+                      </div>
+
+                      <div class="col-6">
+                        <FacebookIcon
+                          fontSize="large"
+                          style={{ color: "#FFD700" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                {data.footer.map((item, i) => (
+                  <div class="col-12 d-flex flex-column align-items-center">
+                    <Button
+                      {...{
+                        key: i,
+                        color: "inherit",
+                        to: item.href,
+                        component: RouterLink,
+                        className: classes.menuButton,
+                      }}
+                    >
+                      <h5 style={{ color: "#696969", textAlign: "center" }}>
+                        {item.label}
+                      </h5>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  return <div className={classes.footerRoot}>{displayFooter()}</div>;
 };
 
 export default Footer;

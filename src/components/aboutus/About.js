@@ -1,8 +1,9 @@
 import React from "react";
+import Footer from "../footer/Footer";
 
 const About = () => {
   const displayBanner = () => {
-    return <h1>GET IN TOUCH</h1>;
+    return <Footer />;
   };
   return <>{displayBanner()}</>;
 };

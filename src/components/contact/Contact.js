@@ -10,6 +10,7 @@ import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import RoomIcon from "@material-ui/icons/Room";
 import EmailIcon from "@material-ui/icons/Email";
 import ContactForm from "./ContactForm";
+import Footer from "../footer/Footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -120,6 +121,7 @@ const Contact = () => {
       {displayBanner()}
       {displayContent()}
       <ContactForm />
+      <Footer />
     </>
   );
 };

@@ -18,6 +18,18 @@
     }
   ],
 
+  "footer": [
+    {
+      "label": "REGISTER",
+      "href": "/"
+    },
+    {
+      "label": "FAQ",
+      "href": "/"
+    },
+    { "label": "PRIVACY POLICY", "href": "/" }
+  ],
+
   "herotext": [
     {
       "main": "A Luxuray Experience",
