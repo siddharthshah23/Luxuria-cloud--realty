@@ -1,0 +1,46 @@
+{
+  "linkData": [
+    {
+      "label": "HOME",
+      "href": "/"
+    },
+    {
+      "label": "ABOUT US",
+      "href": "/about-us"
+    },
+    {
+      "label": "RENTALS",
+      "href": "/rentals"
+    },
+    {
+      "label": "CONTACT US",
+      "href": "/contact-us"
+    }
+  ],
+
+  "herotext": [
+    {
+      "main": "A Luxuray Experience",
+      "sub": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet, consectetur, adipisci velit"
+    }
+  ],
+
+  "weoffer": [
+    {
+      "heading": "We Offer",
+      "subheading": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet, consectetur, adipisci velit"
+    },
+    {
+      "offerheading": "Experience",
+      "offersub": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet"
+    },
+    {
+      "offerheading": "Rentals",
+      "offersub": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet"
+    },
+    {
+      "offerheading": "Packages",
+      "offersub": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet"
+    }
+  ]
+}
