@@ -54,15 +54,5 @@
       "offerheading": "Packages",
       "offersub": "Neque porro quisquam est qui dolorem ipsum quia dolor sitamet"
     }
-  ],
-
-  "imagesList": [
-    {
-      "id": "1",
-      "src": "/assets/aboutus/1.jpg",
-      "title": "foo",
-      "desc": "bar",
-      "author": "Rajni"
-    }
   ]
 }

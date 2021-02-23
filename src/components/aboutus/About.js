@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: "450px",
     // paddingTop: "56.25%", // 16:9
+    [theme.breakpoints.only("xs")]: {
+      height: "250px",
+    },
   },
 
   mediacard: {
@@ -31,6 +34,13 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: "50px",
         paddingTop: "100px",
         color: "white",
+      },
+    },
+
+    [theme.breakpoints.only("xs")]: {
+      "& h1": {
+        color: "white",
+        textAlign: "center",
       },
     },
   },
