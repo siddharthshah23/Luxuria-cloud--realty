@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "10px",
     },
   },
+
+  xyz: {
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "50px",
+    },
+  },
 }));
 const Footer = () => {
   const classes = useStyles();
@@ -30,7 +36,7 @@ const Footer = () => {
       <div className={classes.footerRoot}>
         <div className={classes.root}>
           <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-5 pr-md-5">
               <div class="col-md-3">
                 <div class="row">
                   {data.linkData.map((item, i) => (
@@ -52,10 +58,14 @@ const Footer = () => {
                   ))}
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 mt-2">
                 <div class="row">
                   <div class="col-12 d-flex flex-column align-items-center">
-                    <h1 style={{ textAlign: "center" }}>CONNECT WITH US</h1>
+                    <div className={classes.xyz}>
+                      <h1 style={{ textAlign: "center", color: "white" }}>
+                        CONNECT WITH US
+                      </h1>
+                    </div>
                     <div class="row">
                       <div class="col-6">
                         <InstagramIcon
@@ -74,24 +84,27 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
+
               <div class="col-md-3">
-                {data.footer.map((item, i) => (
-                  <div class="col-12 d-flex flex-column align-items-center">
-                    <Button
-                      {...{
-                        key: i,
-                        color: "inherit",
-                        to: item.href,
-                        component: RouterLink,
-                        className: classes.menuButton,
-                      }}
-                    >
-                      <h5 style={{ color: "#696969", textAlign: "center" }}>
-                        {item.label}
-                      </h5>
-                    </Button>
-                  </div>
-                ))}
+                <div className={classes.xyz}>
+                  {data.footer.map((item, i) => (
+                    <div class="col-12 d-flex flex-column align-items-center">
+                      <Button
+                        {...{
+                          key: i,
+                          color: "inherit",
+                          to: item.href,
+                          component: RouterLink,
+                          className: classes.menuButton,
+                        }}
+                      >
+                        <h5 style={{ color: "#696969", textAlign: "center" }}>
+                          {item.label}
+                        </h5>
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
